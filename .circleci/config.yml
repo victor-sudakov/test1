@@ -8,7 +8,8 @@ jobs:
       - run:
           command: |
             echo "Hello world!"
-            docker-compose
+            cd nginx-static
+            docker-compose build
 workflows:
   test:
     jobs:

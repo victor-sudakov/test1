@@ -1,0 +1,18 @@
+---
+version: '3'
+services:
+  web:
+    restart: always
+    build:
+      context: ./vas-nginx-static/
+    image: 786859394570.dkr.ecr.us-west-2.amazonaws.com/vas/nginx:static
+    ports:
+      - "8083:80"
+    networks:
+      - net15
+    environment:
+      - NGINX_HOST=example.org
+
+networks:
+  net15:
+    driver: bridge
