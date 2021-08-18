@@ -1,16 +1,15 @@
 ---
 version: 2.1
 jobs:
-  test:
+  build:
     machine:
-      image: ubuntu-1604:201903-01
+      image: ubuntu-2004:202010-01
     steps:
-      - checkout
       - run:
-          no_output_timeout: 30m
-          name: Execute Test Suite
           command: |
-            chmod u+x $(pwd)/.circleci/scripts/ci.sh
-            sh $(pwd)/.circleci/scripts/ci.sh
-      - store_test_results:
-          path: test-results
+            echo "Hello world!"
+            docker-compose
+workflows:
+  test:
+    jobs:
+      - build
