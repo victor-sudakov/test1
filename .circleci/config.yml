@@ -1,0 +1,19 @@
+---
+version: 2.1
+jobs:
+  hello:
+    machine:
+      image: ubuntu-2004:202010-01
+    steps:
+      - checkout
+      - run:
+          command: |
+            echo "Deploy it please"
+workflows:
+  test:
+    jobs:
+      - hello:
+          filters:
+            branches:
+              only:
+                - master
