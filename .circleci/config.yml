@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           command: |
-            echo "Deploy it please"
+            echo "Deploy it please please!"
 workflows:
   test:
     jobs:
