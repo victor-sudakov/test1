@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           command: |
-            echo "Hello world!"
+            echo "Hello world and nginx!"
             cd nginx-static
             docker-compose build
 workflows:
